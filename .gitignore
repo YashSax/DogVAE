@@ -1,2 +1,4 @@
 FIDS30/
 dog/
+.conda
+__pycache__/
