@@ -23,7 +23,7 @@ In a VAE, the first third of the model is exactly same as the autoencoder: use a
 
 The KL-Divergence term will encourage the latent space to follow a multivariate Gaussian while the reconstruction loss term makes sure that the reconstructed output is still similar to the input.
 
-From there, creating new dog images is as simple as passing new latent vectors $z \sim ~ N(\mu, \sigma)$ through the decoder! 
+From there, creating new dog images is as simple as passing new latent vectors $z \sim ~ N(0, I)$ through the decoder! 
 
 ## Why so blurry?
 By nature, the output of VAEs are often blurry. Why? In our case of dog image generation, we have $127 * 127 * 3 = 48387$ floats in the original image. Compare this to a latent space size of $256$ and that's $48387 / 256 \approx 190$ times smaller! There's an inordinate amount of information being lost through the network, so the model only learns the most important features of the image, missing some of the details. 
